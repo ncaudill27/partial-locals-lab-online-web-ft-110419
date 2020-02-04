@@ -1,0 +1,12 @@
+<h1>Students</h1>
+
+<%= form_tag "/students", method: :get do %>
+  <%= label_tag "query", "Name Search"%>
+  <%= text_field_tag "query" %>
+  <%= submit_tag "Find" %>
+<% end %>
+
+<% @students.each do |student| %>
+  <%= render 'student', {student: student} %>
+<% end %>
+<%= params.inspect %>
